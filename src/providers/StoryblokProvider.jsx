@@ -9,7 +9,7 @@ import ProductPage from "@/components/content-types/ProductPage";
 import Teaser from "@/components/nestable/Teaser";
 import RichTextDefault from "@/components/nestable/RichText";
 import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import Header from "@/components/layout/header";
 
 import Hero from "@/components/nestable/Hero";
 import ImageBanner from "@/components/nestable/ImageBanner";
