@@ -154,10 +154,10 @@ const Header = () => {
                     </a>
                   </Link>
                   <Link href="/contact">
-                    <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" aria-label="Contact">
-                      <span className="ml-3 text-base font-medium text-gray-900">Contact</span>
-                    /a>
-                  </Link>
+                  <a className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50" aria-label="Contact">
+                  <span className="ml-3 text-base font-medium text-gray-900">Contact</span>
+                  </a>
+                </Link>
                 </nav>
               </div>
             </div>
