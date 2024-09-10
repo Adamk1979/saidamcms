@@ -7,7 +7,7 @@ import Config from "@/components/content-types/Config";
 import ProductPage from "@/components/content-types/ProductPage";
 
 import Teaser from "@/components/nestable/Teaser";
-import RichTextDefault from "@/components/nestable/RichText";
+import RichText from "@/components/nestable/RichText";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/header";
 
@@ -22,7 +22,7 @@ import LatestProductsList from "@/components/nestable/LatestProductsList";
 const components = {
   "page": Page,
   "teaser":Teaser,
-  "richtext": RichTextDefault,
+  "richText": RichText,
   "config": Config,
   "ProductPage": ProductPage,
   "Footer": Footer,
