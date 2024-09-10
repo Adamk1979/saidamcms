@@ -7,7 +7,7 @@ import Config from "@/components/content-types/Config";
 import ProductPage from "@/components/content-types/ProductPage";
 
 import Teaser from "@/components/nestable/Teaser";
-import RichTextDefault from "@/components/nestable/RichText";
+import RichText from "@/components/nestable/RichText";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
@@ -20,19 +20,19 @@ import LatestProductsList from "@/components/nestable/LatestProductsList";
 
 
 const components = {
-  page: Page,
-  teaser: Teaser,
-  richtext: RichTextDefault,
-  config: Config,
-  productPage: ProductPage,
-  footer: Footer,
-  header: Header,
-  hero: Hero,
-  imageBanner: ImageBanner,
-  searchBar: SearchBar,
-  imageWithText: ImageWithText,
-  productList: ProductList,
-  latestProductsList: LatestProductsList
+  "page": Page,
+  "teaser":Teaser,
+  "richText": RichText,
+  "config": Config,
+  "ProductPage": ProductPage,
+  "Footer": Footer,
+  "Header": Header,
+  "Hero": Hero,
+  "ImageBanner": ImageBanner,
+  "SearchBar": SearchBar,
+  "ImageWithText": ImageWithText,
+  "ProductList": ProductList,
+  "LatestProductsList": LatestProductsList
 }
 
 storyblokInit({
