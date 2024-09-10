@@ -1,0 +1,100 @@
+.footer {
+    margin-top: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.leftSide {
+    flex: 1;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    max-width: 50%;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 105px;
+}
+
+.richText {
+    margin-bottom: 10px;
+    width: 480px;
+    font-size: 15px;
+    margin-left: 105px;
+}
+
+.search {
+    margin-bottom: 10px;
+    width: 450px;
+    margin-left: 105px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.emailInput {
+    padding: 8px;
+    width: calc(100% - 110px);
+    border: 1px solid #ccc;
+}
+
+.emailLink {
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.emailLink:hover {
+    text-decoration: none;
+}
+
+.navList {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.navSection {
+    margin: 0;
+}
+
+.navTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.navSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navSection li {
+    margin-bottom: 5px;
+    width: 120px;
+}
+
+.navSection a {
+    text-decoration: none;
+    color: gray;
+}
+
+.navSection a:hover {
+    text-decoration: underline;
+}
+

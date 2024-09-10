@@ -1,0 +1,81 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    margin-right: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    max-width: 100%; /* Prevent logo from exceeding its container */
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: none;
+    width: 200px; /* Adjust width as needed */
+    max-width: 100%;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    max-width: 100%; /* Prevent the section from exceeding the width */
+}
+
+.logo-two {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #343a40;
+}

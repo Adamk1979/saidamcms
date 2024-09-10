@@ -3,9 +3,8 @@ import "./globals.css";
 import StoryblokProvider from "@/providers/StoryblokProvider";
 import { StoryblokCMS } from "@/utils/cms";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
-
-// import Footer from "@/components/layout/Footer";
-// import Header from "@/components/layout/Header";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 storyblokInit({
   accessToken: StoryblokCMS.TOKEN,
@@ -14,14 +13,15 @@ storyblokInit({
 
 export default async function RootLayout({ children }) {
   const currentConfig = await StoryblokCMS.getConfig();
+  console.log("Current Config in RootLayout:", currentConfig);
 
   return (
     <StoryblokProvider>
       <html>
         <body>
-          {/* <Header config={currentConfig} /> */}
+          <Header blok={currentConfig} />
           <Layout config={currentConfig}>{children}</Layout>
-          {/* <Footer config={currentConfig} /> */}
+          <Footer blok={currentConfig} />
         </body>
       </html>
     </StoryblokProvider>
