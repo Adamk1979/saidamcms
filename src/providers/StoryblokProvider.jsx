@@ -24,15 +24,15 @@ const components = {
   "teaser":Teaser,
   "richText": RichText,
   "config": Config,
-  "ProductPage": ProductPage,
-  "Footer": Footer,
-  "Header": Header,
-  "Hero": Hero,
-  "ImageBanner": ImageBanner,
-  "SearchBar": SearchBar,
-  "ImageWithText": ImageWithText,
-  "ProductList": ProductList,
-  "LatestProductsList": LatestProductsList
+  "productPage": ProductPage,
+  "footer": Footer,
+  "header": Header,
+  "hero": Hero,
+  "imageBanner": ImageBanner,
+  "searchBar": SearchBar,
+  "imageWithText": ImageWithText,
+  "productList": ProductList,
+  "latestProductsList": LatestProductsList
 }
 
 storyblokInit({
