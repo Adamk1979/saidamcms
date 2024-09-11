@@ -4,7 +4,8 @@ import Link from "next/link";
 import '../styles/footer.css'; 
 
 export default function Footer({ blok }) {
-  console.log("footer blok:", blok);
+  console.log("Footer blok:", blok);
+
   const [email, setEmail] = useState("");
 
   const extractText = (richText) => {
@@ -14,32 +15,34 @@ export default function Footer({ blok }) {
       .join(' ');
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  // Check if `blok` has footer data and is an array
+  const footer = Array.isArray(blok) ? blok[0] : blok?.footer?.[0];
+  
+  if (!footer) {
+    return null; // or some placeholder content
+  }
 
-  // Extracting the link and constructing the URL
-  const emailLink = blok?.search?.[0]?.link?.[0];
+  const emailLink = footer?.search?.[0]?.link?.[0];
   const emailLinkUrl = emailLink?.story?.slug ? `/${emailLink.story.slug}` : "#";
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="leftSide">
-          {blok?.title && <h2 className="title">{blok.title}</h2>}
+          {footer?.title && <h2 className="title">{footer.title}</h2>}
 
-          {blok?.text && (
+          {footer?.text && (
             <div className="richText">
-              <p>{extractText(blok.text)}</p>
+              <p>{extractText(footer.text)}</p>
             </div>
           )}
 
-          {blok?.search && (
+          {footer?.search && (
             <div className="search">
               <input
                 type="email"
                 value={email}
-                onChange={handleEmailChange}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
                 className="emailInput"
               />
@@ -58,11 +61,10 @@ export default function Footer({ blok }) {
         </div>
 
         <nav className="rightSide">
-          {blok?.nav && (
+          {footer?.nav && (
             <div className="navList">
-              {blok.nav.map((navBlock, index) => (
+              {footer.nav.map((navBlock, index) => (
                 <div key={index} className="navSection">
-                  {/* Use dynamic titles from navBlock */}
                   {navBlock.component === 'navone' && (
                     <>
                       <h4 className="navTitle">
@@ -70,7 +72,7 @@ export default function Footer({ blok }) {
                       </h4>
                       <ul>
                         {navBlock.navone.filter(item => item.component === 'nav-item').map((item, idx) => (
-                          <li key={idx}>
+                          <li key={idx} className="navItem">
                             <Link href={item.link?.url || "#"}>
                               {item.label}
                             </Link>
@@ -86,7 +88,7 @@ export default function Footer({ blok }) {
                       </h4>
                       <ul>
                         {navBlock.navtwo.filter(item => item.component === 'nav-item').map((item, idx) => (
-                          <li key={idx}>
+                          <li key={idx} className="navItem">
                             <Link href={item.link?.url || "#"}>
                               {item.label}
                             </Link>
@@ -102,7 +104,7 @@ export default function Footer({ blok }) {
                       </h4>
                       <ul>
                         {navBlock.navthree.filter(item => item.component === 'nav-item').map((item, idx) => (
-                          <li key={idx}>
+                          <li key={idx} className="navItem">
                             <Link href={item.link?.url || "#"}>
                               {item.label}
                             </Link>

@@ -1,12 +1,17 @@
-//Uses config set global components for the layout
+// components/Layout.jsx
+import Header from "./Header";
+import Footer from "./Footer";
+
 export default function Layout({ config, children }) {
-    //Create at least a header and footer component
-    //Use console.log to determine blok object structure if unsure...
-    return (
-        <>
-            <header></header>
-            <main>{children}</main>
-            <footer></footer>
-        </>
-    );
+  // Extract header and footer from the content field
+  const { content } = config || {};
+  const { header, footer } = content || {}; // Destructure header and footer from content
+
+  return (
+    <>
+      <Header blok={header} /> {/* Pass header to Header component */}
+      <main>{children}</main>
+      <Footer blok={footer} /> {/* Pass footer to Footer component */}
+    </>
+  );
 }

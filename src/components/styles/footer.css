@@ -1,7 +1,8 @@
 .footer {
-    margin-top: 150px;
+    margin-top: auto;
     padding: 20px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .container {
@@ -9,6 +10,8 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .leftSide {
@@ -16,61 +19,61 @@
 }
 
 .rightSide {
+    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    flex: 1;
-    max-width: 50%;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .title {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
-    margin-left: 105px;
 }
 
 .richText {
     margin-bottom: 10px;
-    width: 480px;
+    width: 450px;
     font-size: 15px;
-    margin-left: 105px;
 }
 
 .search {
     margin-bottom: 10px;
-    width: 450px;
-    margin-left: 105px;
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .emailInput {
-    padding: 8px;
-    width: calc(100% - 110px);
     border: 1px solid #ccc;
 }
+
 
 .emailLink {
     color: black;
     text-decoration: none;
-    font-size: 15px;
+    font-weight: bold;
 }
 
 .emailLink:hover {
     text-decoration: none;
+    color: gray;
 }
 
 .navList {
-    margin-left: 20px;
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .navSection {
-    margin: 0;
+    min-width: 150px;
+    max-width: 200px;
 }
 
 .navTitle {
@@ -82,19 +85,31 @@
 .navSection ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-.navSection li {
+.navSection .navItem {
     margin-bottom: 5px;
-    width: 120px;
 }
 
 .navSection a {
     text-decoration: none;
-    color: gray;
+    color: gray; 
+    font-weight: normal; 
 }
 
 .navSection a:hover {
     text-decoration: underline;
+    color: black; 
 }
 
+.navSection .navItem:first-child a {
+    color: gray;
+    font-weight: bold; 
+}
+
+.navSection .navItem:not(:first-child) a {
+    font-weight: bolder; 
+}

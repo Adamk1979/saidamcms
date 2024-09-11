@@ -1,70 +1,74 @@
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import '../styles/header.css'; 
+import '../styles/header.css';
 
 export default function Header({ blok }) {
-    console.log("Header blok:", blok);
+  console.log("Header blok:", blok);
 
-    const navigation = blok.navigation && blok.navigation[0]; 
+  // Check if `blok` has header data and is an array
+  const header = Array.isArray(blok) ? blok[0] : blok?.header?.[0];
+  
+  if (!header) {
+    return null; // or some placeholder content
+  }
 
-    const isLinkArray = Array.isArray(navigation?.links);
-    const isSearchArray = Array.isArray(navigation?.search);
+  const isLinkArray = Array.isArray(header?.links);
+  const isSearchArray = Array.isArray(header?.search);
 
-    return (
-        <header className="header-content">
-            {/* Left section */}
-            <div className="left-section">
-                {navigation && isLinkArray && (
-                    <nav>
-                        <ul>
-                            {navigation.links.map((l, index) => (
-                                <li key={index}>
-                                    <Link href={l.link.cached_url} passHref>
-                                        {l.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                )}
+  return (
+    <header className="header-content">
+      <div className="left-section">
+        {header && isLinkArray && (
+          <nav>
+            <ul>
+              {header.links.map((l, index) => (
+                <li key={index}>
+                  <Link href={l.link?.cached_url || "#"} passHref>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
-                {navigation && navigation.logo && (
-                    <div className="logo">
-                        <Image
-                            src={navigation.logo.filename} 
-                            alt="Logo"
-                            width={30}
-                            height={30}
-                        />
-                    </div>
-                )}
+        {header && header.logo && (
+          <div className="logo">
+            <Image
+              src={header.logo.filename} 
+              alt={header.logo.alt || "Logo"}
+              width={30}
+              height={30}
+            />
+          </div>
+        )}
 
-                {navigation && isSearchArray && navigation.search[0]?.component === 'mysearch' && (
-                    <div className="search">
-                        <input type="text" placeholder={navigation.search[0]?.input || "Search..."} />
-                    </div>
-                )}
-            </div>
+        {header && isSearchArray && header.search[0]?.component === 'mysearch' && (
+          <div className="search">
+            <input type="text" placeholder={header.search[0]?.input || "Search"} />
+          </div>
+        )}
+      </div>
 
-            {/* Right section */}
-            <div className="right-section">
-                {navigation && navigation.logotwo && (
-                    <div className="logo-two">
-                        <Image
-                            src={navigation.logotwo.filename} 
-                            alt="Logo Two"
-                            width={30}
-                            height={30}
-                        />
-                    </div>
-                )}
+      <div className="right-section">
+        {header && header.logotwo && (
+          <div className="logo-two">
+            <Image
+              src={header.logotwo.filename} 
+              alt={header.logotwo.alt || "Logo Two"}
+              width={30}
+              height={30}
+            />
+          </div>
+        )}
 
-                {navigation && navigation.number && (
-                    <div className="number">
-                        <span>{navigation.number}</span>
-                    </div>
-                )}
-            </div>
-        </header>
-    );
+        {header && header.number && (
+          <div className="number">
+            <span>{header.number}</span>
+          </div>
+        )}
+      </div>
+    </header>
+  );
 }
