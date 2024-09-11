@@ -1,0 +1,24 @@
+/* styles/product-grid.css */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 products per row */
+    gap: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .product img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product__details h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
