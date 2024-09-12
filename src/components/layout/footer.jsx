@@ -15,11 +15,10 @@ export default function Footer({ blok }) {
       .join(' ');
   };
 
-  // Check if `blok` has footer data and is an array
   const footer = Array.isArray(blok) ? blok[0] : blok?.footer?.[0];
   
   if (!footer) {
-    return null; // or some placeholder content
+    return null; 
   }
 
   const emailLink = footer?.search?.[0]?.link?.[0];

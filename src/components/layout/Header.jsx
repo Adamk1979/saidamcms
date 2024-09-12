@@ -6,11 +6,10 @@ import '../styles/header.css';
 export default function Header({ blok }) {
   console.log("Header blok:", blok);
 
-  // Check if `blok` has header data and is an array
   const header = Array.isArray(blok) ? blok[0] : blok?.header?.[0];
   
   if (!header) {
-    return null; // or some placeholder content
+    return null; 
   }
 
   const isLinkArray = Array.isArray(header?.links);
