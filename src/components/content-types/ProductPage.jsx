@@ -1,9 +1,8 @@
-// src/components/content-types/ProductPage.jsx
 import React, { useState } from 'react';
-import Storyblok, { useStoryblokState } from '@storyblok/react/rsc';
+import { useStoryblokState } from '@storyblok/react';
 import ProductGrid from '@/components/nestable/ProductGrid';
 import Filtering from '@/components/nestable/Filtering';
-import MyText from '@/components/nestable/MyText'; // Import MyText component
+import MyText from '@/components/nestable/MyText';
 
 export async function getStaticProps() {
   const { data } = await Storyblok.get('cdn/stories/products', {
@@ -27,20 +26,20 @@ export default function ProductPage({ story }) {
     return <div>No products available</div>;
   }
 
-  // Extract and log mytext block
   const mytext = liveStory.content.mytext;
-  console.log("Mytext Block:", mytext);
 
   return (
     <div>
-      {/* Render mytext block */}
       {mytext && <MyText blok={mytext} />}
-
-      {/* Pass setSelectedCategory and selectedCategory as props to Filtering */}
-      <Filtering blok={liveStory.content} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
-
-      {/* Pass selectedCategory to ProductGrid */}
-      <ProductGrid blok={liveStory.content} selectedCategory={selectedCategory} />
+      <Filtering 
+        blok={liveStory.content}
+        setSelectedCategory={setSelectedCategory}  // Pass the function here
+        selectedCategory={selectedCategory}
+      />
+      <ProductGrid 
+        blok={liveStory.content}
+        selectedCategory={selectedCategory}
+      />
     </div>
   );
 }

@@ -1,31 +1,40 @@
-// src/components/nestable/Filtering.jsx
 import React from 'react';
-import '@/components/styles/filter-grid.css'; // Ensure the correct CSS path
+import '@/components/styles/filter-grid.css'; 
 
 const Filtering = ({ blok, setSelectedCategory, selectedCategory }) => {
-    if (!blok.categories) {
-      return <div>No categories available</div>;
-    }
-  
-    return (
-      <div className="filter-container">
-        {blok.categories.map((category) => (
-          <button
-            key={category}
-            className={category === selectedCategory ? 'filter-btn active' : 'filter-btn'}
-            onClick={() => setSelectedCategory(category)} // Set the selected category on click
-          >
-            {category}
-          </button>
-        ))}
+  console.log('Filtering rendering:', { blok, setSelectedCategory, selectedCategory });
+
+  if (!blok.categories) {
+    return <div>No categories available</div>;
+  }
+
+  return (
+    <div className="filter-container">
+      {blok.categories.map((category) => (
         <button
-          className={!selectedCategory ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setSelectedCategory(null)} // Show all products
+          key={category}
+          className={category === selectedCategory ? 'filter-btn active' : 'filter-btn'}
+          onClick={() => {
+            console.log('Category clicked:', category);
+            setSelectedCategory(category);
+            console.log('Selected category after click:', category);
+          }}
         >
-          Show All
+          {category}
         </button>
-      </div>
-    );
-  };
-  
-  export default Filtering;
+      ))}
+      <button
+        className={!selectedCategory ? 'filter-btn active' : 'filter-btn'}
+        onClick={() => {
+          console.log('Show All clicked');
+          setSelectedCategory(null);
+          console.log('Selected category after Show All click:', null);
+        }}
+      >
+        Show All
+      </button>
+    </div>
+  );
+};
+
+export default Filtering;
