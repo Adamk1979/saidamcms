@@ -1,0 +1,34 @@
+/* src/components/styles/filtering.css */
+
+/* Container for the buttons */
+.filter-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px; /* Reduce gap between buttons */
+  margin-bottom: 20px;
+}
+
+/* General button styling */
+.filter-btn {
+  padding: 5px 10px; /* Smaller padding for compact buttons */
+  background-color: transparent;
+  border: 1px solid #000; /* Thinner border */
+  color: #000;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold;
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.filter-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Active (selected) button styling */
+.filter-btn.active {
+  background-color: #000;
+  color: #fff;
+}
