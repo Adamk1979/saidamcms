@@ -2,11 +2,14 @@ import React from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
 const Product = ({ blok }) => {
-  if (!blok || !blok.image) {
+  if (!blok) {
     return <div>No product data available</div>;
   }
 
-  const { name, image, price, size } = blok;
+  const { name, image, price, size, link } = blok;
+
+  // Extract the first productlink if available
+  const productLink = link && link.length > 0 ? link[0] : null;
 
   return (
     <div className="product" {...storyblokEditable(blok)}>
@@ -20,6 +23,14 @@ const Product = ({ blok }) => {
         {price && <p>Price: ${price}</p>}
         {size && <p>Size: {size}</p>}
       </div>
+      
+      {productLink && productLink.component === 'productlink' && (
+        <div className="product__link">
+          <a href={productLink.link.cached_url} className="product-link">
+            {productLink.label}
+          </a>
+        </div>
+      )}
     </div>
   );
 };
