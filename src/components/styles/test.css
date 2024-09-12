@@ -1,49 +1,29 @@
-/* Container for product details with a flex layout */
 .product-detail {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
     margin: 0 auto;
-    gap: 50px;
     font-family: Arial, sans-serif;
 }
 
-/* Image container with a fixed width */
 .product-detail__image {
-    flex: 1;
-    max-width: 50%; /* Image takes up 50% of the container width */
-}
-
-/* Ensure the image scales properly */
-.product-detail__image img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    margin-bottom: 20px;
 }
 
-/* The section where all product info (name, price, etc.) will be displayed */
-.product-detail__info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Product name styling */
 .product-detail__name {
     font-size: 2.5rem;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-/* Product price styling */
 .product-detail__price {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Description styling */
 .product-detail__description {
     font-size: 1.1rem;
     margin-bottom: 20px;
@@ -51,37 +31,31 @@
     color: #555;
 }
 
-/* Styling for color label and color swatches */
 .product-detail__label {
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-/* Flex layout for color swatches */
 .product-detail__colors {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-/* Individual color swatches */
 .product-detail__colors img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    border: 1px solid #ccc;
 }
 
-/* Flex layout for size buttons */
 .product-detail__sizes {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-/* Styling for individual size buttons */
 .product-detail__size-button {
     padding: 10px 15px;
     border: 1px solid #ccc;
@@ -92,7 +66,6 @@
     min-width: 50px;
 }
 
-/* Hover and active states for size buttons */
 .product-detail__size-button:hover {
     background-color: #ddd;
 }
@@ -102,7 +75,6 @@
     color: #fff;
 }
 
-/* Flex layout for buttons */
 .product-detail__buttons {
     display: flex;
     flex-direction: row;
@@ -110,7 +82,6 @@
     margin-bottom: 20px;
 }
 
-/* Styling for buttons */
 .button {
     background-color: #000;
     color: #fff;
@@ -124,7 +95,6 @@
     display: inline-block;
 }
 
-/* Model information styling */
 .product-detail__model {
     font-size: 0.9rem;
     color: #666;
