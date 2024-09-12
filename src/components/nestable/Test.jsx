@@ -25,13 +25,10 @@ export default function Test({ blok }) {
                 </div>
             )}
 
-            {/* Render test field */}
             <div>{blok.test}</div>
-
-            {/* Render rich text content */}
+            <div>{blok.price}</div>
             {blok.text && <div>{extractText(blok.text)}</div>}
 
-            {/* Render colors if they exist */}
             <div>{blok.colores}</div>
             {blok.colors && (
                 <div className="product-detail__colors">
@@ -47,10 +44,8 @@ export default function Test({ blok }) {
                 </div>
             )}
 
-            {/* Render size */}
             <div>{blok.size}</div>
 
-            {/* Render buttons */}
             {blok.buttons && (
                 <div className="product-detail__buttons">
                     {blok.buttons.map((button, index) => (
