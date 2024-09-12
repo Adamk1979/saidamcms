@@ -6,6 +6,7 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "@/components/content-types/Page";
 import Config from "@/components/content-types/Config";
 import ProductPage from "@/components/content-types/ProductPage";
+import ProductDetail from "@/components/content-types/ProductDetail";
 
 // Nestable components
 import Teaser from "@/components/nestable/Teaser";
@@ -22,6 +23,7 @@ import ProductGrid from "@/components/nestable/ProductGrid";
 import Product from "@/components/nestable/Product";
 import Filtering from "@/components/nestable/Filtering";
 import MyText from '@/components/nestable/MyText'; 
+import Test from "@/components/nestable/Test";
 
 // Register all components
 const components = {
@@ -42,6 +44,8 @@ const components = {
   "product": Product,
   "filtering": Filtering,
   "mytext": MyText,
+  "productdetail": ProductDetail,
+  "test": Test,
 };
 
 // Initialize Storyblok

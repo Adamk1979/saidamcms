@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import '../styles/header.css';
 
-export default function Header({ blok, onSearch }) {
+export default function Header({ blok }) {
   console.log("Header blok:", blok);
 
   const header = Array.isArray(blok) ? blok[0] : blok?.header?.[0];
