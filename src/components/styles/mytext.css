@@ -1,0 +1,18 @@
+.mytext {
+    padding: 20px;
+  }
+  
+  .mytext-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: black;
+  }
+  
+  .mytext-text {
+    font-size: 17px;
+    color: black;
+    line-height: 1.6;
+    width: 405px;
+  }
+  

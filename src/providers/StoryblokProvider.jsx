@@ -21,6 +21,7 @@ import LatestProductsList from "@/components/nestable/LatestProductsList";
 import ProductGrid from "@/components/nestable/ProductGrid";
 import Product from "@/components/nestable/Product";
 import Filtering from "@/components/nestable/Filtering";
+import MyText from '@/components/nestable/MyText'; 
 
 // Register all components
 const components = {
@@ -40,6 +41,7 @@ const components = {
   "product_grid": ProductGrid,
   "product": Product,
   "filtering": Filtering,
+  "mytext": MyText,
 };
 
 // Initialize Storyblok
