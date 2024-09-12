@@ -1,13 +1,12 @@
-// src/components/nestable/Product.jsx
 import React from 'react';
 import { storyblokEditable } from '@storyblok/react/rsc';
 
 const Product = ({ blok }) => {
   if (!blok || !blok.image) {
-    return <div>No product data available</div>; // Fallback in case of missing data
+    return <div>No product data available</div>;
   }
 
-  const { image, name, price, size } = blok; // Destructure product data
+  const { name, image, price, size } = blok;
 
   return (
     <div className="product" {...storyblokEditable(blok)}>

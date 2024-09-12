@@ -2,7 +2,7 @@
 import { StoryblokCMS } from "@/utils/cms";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 
-// Content type components
+// Import components
 import Page from "@/components/content-types/Page";
 import Config from "@/components/content-types/Config";
 import ProductPage from "@/components/content-types/ProductPage";
@@ -18,10 +18,9 @@ import SearchBar from "@/components/nestable/SearchBar";
 import ImageWithText from "@/components/nestable/ImageWithText";
 import ProductList from "@/components/nestable/ProductList";
 import LatestProductsList from "@/components/nestable/LatestProductsList";
-
-// Add missing components
-import ProductGrid from "@/components/nestable/ProductGrid"; // Import ProductGrid
-import Product from "@/components/nestable/Product"; // Import individual Product block
+import ProductGrid from "@/components/nestable/ProductGrid";
+import Product from "@/components/nestable/Product";
+import Filtering from "@/components/nestable/Filtering";
 
 // Register all components
 const components = {
@@ -38,11 +37,12 @@ const components = {
   "imageWithText": ImageWithText,
   "productList": ProductList,
   "latestProductsList": LatestProductsList,
-  "product_grid": ProductGrid, // Register ProductGrid
-  "product": Product, // Register individual Product block
+  "product_grid": ProductGrid,
+  "product": Product,
+  "filtering": Filtering,
 };
 
-// Initialize Storyblok with the access token and components
+// Initialize Storyblok
 storyblokInit({
   accessToken: StoryblokCMS.TOKEN, // Ensure this is correctly set
   use: [apiPlugin],

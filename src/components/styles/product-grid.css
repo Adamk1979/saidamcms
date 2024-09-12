@@ -1,8 +1,26 @@
-/* styles/product-grid.css */
+/* src/components/styles/product-grid.css */
 
-.grid-container {
+.filtering {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filtering button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .filtering button:hover {
+    background-color: #555;
+  }
+  
+  .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 products per row */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
   
@@ -10,15 +28,5 @@
     border: 1px solid #ddd;
     padding: 15px;
     text-align: center;
-  }
-  
-  .product img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .product__details h2 {
-    font-size: 1.2rem;
-    margin: 10px 0;
   }
   

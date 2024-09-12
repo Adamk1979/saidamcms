@@ -1,15 +1,20 @@
 // src/components/nestable/ProductGrid.jsx
 import React from 'react';
-import Product from './Product'; // Import the Product component
-import '@/components/styles/product-grid.css'; 
+import Product from './Product';
+import '@/components/styles/product-grid.css'; // Ensure the styles are connected
 
+const ProductGrid = ({ blok, selectedCategory }) => {
+  // Filter products based on selected category
+  const filteredProducts = selectedCategory
+    ? blok.products.filter((product) => product.category === selectedCategory)
+    : blok.products; // Show all products if no category is selected
 
-const ProductGrid = ({ blok }) => {
   return (
     <div className="product-grid">
+      {/* Product grid */}
       <div className="grid-container">
-        {blok.products?.map((product) => (
-          <Product key={product._uid} blok={product} /> // Pass each product to the Product component
+        {filteredProducts.map((product) => (
+          <Product key={product._uid} blok={product} />
         ))}
       </div>
     </div>
