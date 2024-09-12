@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/components/styles/test.css'; 
+
 
 export default function Test({ blok }) {
     console.log("test blok", blok);
@@ -69,3 +71,4 @@ export default function Test({ blok }) {
         </div>
     );
 }
+
