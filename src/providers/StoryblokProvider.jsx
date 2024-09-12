@@ -6,7 +6,6 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import Page from "@/components/content-types/Page";
 import Config from "@/components/content-types/Config";
 import ProductPage from "@/components/content-types/ProductPage";
-import ProductDetail from "@/components/content-types/ProductDetail";
 
 // Nestable components
 import Teaser from "@/components/nestable/Teaser";
@@ -44,7 +43,6 @@ const components = {
   "product": Product,
   "filtering": Filtering,
   "mytext": MyText,
-  "productdetail": ProductDetail,
   "test": Test,
 };
 
