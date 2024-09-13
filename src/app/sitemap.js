@@ -4,7 +4,6 @@ import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 storyblokInit({
     accessToken: StoryblokCMS.TOKEN, 
     use: [apiPlugin],
-    components,
   });
 
 export default async function sitemap() {
